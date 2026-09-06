@@ -4,8 +4,11 @@
 (() => {
   // ---- site config: change these two before launch ----
   const CONFIG = {
-    whatsapp: '920000000000',        // E.164 without "+", e.g. 923001234567
-    endpoint: '',                    // optional: Formspree / HubSpot / your API URL that accepts JSON POST
+    whatsapp: '923017275551',        // E.164 without "+"
+    // HubSpot Forms API (no auth needed for submissions). Create a form in HubSpot with the
+    // properties firstname, phone, company, city, message — then paste the two ids here.
+    hubspot: { portalId: '', formId: '' },
+    endpoint: '',                    // optional fallback: any URL that accepts a JSON POST
     thankYou: 'thank-you.html',
   };
   window.VOIPCOM = CONFIG;
@@ -92,7 +95,26 @@
       if (btn) { btn.disabled = true; btn.dataset.label = btn.textContent; btn.textContent = 'Sending…'; }
       push('lead_submit', { service: data.service, page: data.page });
 
-      if (CONFIG.endpoint) {
+      const hs = CONFIG.hubspot || {};
+      if (hs.portalId && hs.formId) {
+        // HubSpot Forms API — everything that isn't a standard contact property goes into "message"
+        const extra = ['need', 'team', 'service', 'page', 'landing', 'referrer', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid', 'ttclid']
+          .filter((k) => data[k]).map((k) => `${k}: ${data[k]}`).join('\n');
+        const fields = [
+          { name: 'firstname', value: data.name || '' },
+          { name: 'phone', value: data.phone || '' },
+          { name: 'company', value: data.business || '' },
+          { name: 'city', value: data.city || '' },
+          { name: 'message', value: [data.message, extra].filter(Boolean).join('\n\n') },
+        ].filter((f) => f.value).map((f) => Object.assign({ objectTypeId: '0-1' }, f));
+        const hutk = (document.cookie.match(/(?:^|; )hubspotutk=([^;]+)/) || [])[1];
+        try {
+          await fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${hs.portalId}/${hs.formId}`, {
+            method: 'POST', headers: { 'Content-Type': 'application/json' }, keepalive: true,
+            body: JSON.stringify({ fields, context: { hutk, pageUri: location.href, pageName: document.title } }),
+          });
+        } catch { /* never block the user on a failed post */ }
+      } else if (CONFIG.endpoint) {
         try {
           await fetch(CONFIG.endpoint, {
             method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
