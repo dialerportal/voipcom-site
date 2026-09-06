@@ -1,0 +1,30 @@
+# voipcom System
+
+> Business telecom for Pakistan, built and billed in Pakistan. Four services on one cloud phone system: call center solutions, cloud PBX, business automation (order-confirmation calls, AI voice agents, WhatsApp/CRM workflows), and Pakistani DID numbers with SIP delivery for AI voice agents (Retell, Vapi, Bland). No hardware, live in a day, works with PTA-licensed operators, plans from PKR 2,900/month. Registered company: Voipcom System (Pvt) Ltd.
+
+## Services (landing pages)
+- [Call center solutions in Pakistan](https://voipcomsystem.com/call-center.html): Cloud dialer (predictive/progressive/preview), IVR, queues, recording, live supervisor dashboard, remote agents. Pilot team live in 24 hours.
+- [Cloud PBX](https://voipcomsystem.com/cloud-pbx.html): One business number, unlimited extensions, Urdu/English IVR, call recording, reports, mobile app. Replaces the PABX box and per-employee SIMs.
+- [Business automation](https://voipcomsystem.com/automation.html): Automated COD order-confirmation calls, AI voice agents for after-hours and overflow, WhatsApp follow-ups, CRM sync.
+- [Pakistani DIDs for AI agents](https://voipcomsystem.com/ai-phone-numbers.html): 021/042/051 numbers with SIP trunking that plug into Retell, Vapi, Bland and custom stacks.
+- [Pricing](https://voipcomsystem.com/pricing.html): PKR plans from 2,900/month; call centers and automation priced per seat/call.
+- [Book a demo](https://voipcomsystem.com/contact.html)
+
+## Guides
+- [PBX 101](https://voipcomsystem.com/learn.html)
+- [What is a PBX?](https://voipcomsystem.com/what-is-a-pbx.html)
+- [PABX vs Cloud PBX](https://voipcomsystem.com/pabx-vs-cloud-pbx.html)
+- [PABX price in Pakistan](https://voipcomsystem.com/pabx-price-in-pakistan.html)
+- [Reduce COD returns in Pakistan](https://voipcomsystem.com/reduce-cod-returns-pakistan.html)
+- [Telephony glossary](https://voipcomsystem.com/glossary.html)
+
+## Products (detail pages)
+- [All products](https://voipcomsystem.com/products.html)
+- [Cloud PBX Pakistan](https://voipcomsystem.com/cloud-pbx-pakistan.html)
+- [IP PBX systems in Pakistan](https://voipcomsystem.com/ip-pbx-pakistan.html)
+- [Pakistan DID numbers](https://voipcomsystem.com/pakistan-did-numbers.html)
+- [Shopify COD order-confirmation calls](https://voipcomsystem.com/shopify-cod-confirmation.html)
+- [IVR system Pakistan](https://voipcomsystem.com/ivr-system-pakistan.html)
+
+## By city
+- [Karachi](https://voipcomsystem.com/cloud-pbx-karachi.html) · [Lahore](https://voipcomsystem.com/cloud-pbx-lahore.html) · [Islamabad](https://voipcomsystem.com/cloud-pbx-islamabad.html) · [Business phone systems in Pakistan](https://voipcomsystem.com/business-phone-system-pakistan.html)
