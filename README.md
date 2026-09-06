@@ -21,11 +21,17 @@ Infra: `sitemap.xml`, `robots.txt`, `llms.txt`, per-page JSON-LD (Breadcrumb + S
 
 `js/site.js` → `CONFIG` at the top:
 
-- `whatsapp` — your WhatsApp number in E.164 without `+` (e.g. `923001234567`). Every
-  `data-wa` button and the thank-you page use it. **Currently a placeholder.**
-- `endpoint` — optional URL that accepts a JSON POST (Formspree, HubSpot Forms API, your own
-  API). Leave empty and leads still flow: the form stores the lead, redirects to
-  `thank-you.html`, and offers a prefilled WhatsApp handoff. Set it to also get an email/CRM copy.
+- `whatsapp` — `923017275551` (E.164 without `+`). Every `data-wa` button and the thank-you
+  page use it.
+- `hubspot: { portalId, formId }` — **HubSpot Forms API** (no API key needed for submissions).
+  In HubSpot: Marketing → Forms → create a form with the fields *First name, Phone, Company,
+  City, Message* → Embed → copy the `portalId` and `formId` from the embed code → paste here.
+  The site sends `firstname/phone/company/city` and packs need, team size, service, page and
+  every UTM/gclid into `message`. Also paste HubSpot's tracking code at `<!-- TRACKING -->` so
+  the `hutk` cookie attributes the contact to the visit.
+- `endpoint` — optional fallback: any URL that accepts a JSON POST (used only if HubSpot ids are empty).
+- With neither set, leads still flow: the form stores the lead, redirects to `thank-you.html`,
+  and offers a prefilled WhatsApp handoff.
 
 Every form (`form[data-lead]`) auto-attaches: `page`, `service`, and any `utm_*` / `gclid` /
 `fbclid` captured on landing (kept for the session). Events pushed to `dataLayer`:
