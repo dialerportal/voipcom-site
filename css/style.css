@@ -358,7 +358,7 @@ footer { background: var(--night); color: rgba(255,255,255,0.7); margin-top: cla
 .prose ul, .prose ol { color: var(--ink-2); margin: 0 0 18px; padding-left: 22px; }
 .prose li { margin: 6px 0; }
 .prose li::marker { color: var(--green-ink); }
-.prose blockquote { margin: 22px 0; padding: 4px 20px; border-left: 3px solid var(--green); color: var(--ink); }
+.prose blockquote { margin: 22px 0; padding: 4px 20px; border-left: 1px solid var(--line-2); color: var(--ink); font-style: italic; }
 .callout { margin: 24px 0; padding: 18px 22px; border-radius: var(--r); border: 1px solid var(--green); background: var(--green-soft); }
 .callout .k { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green-ink); display: block; margin-bottom: 6px; }
 .callout p { margin: 0; color: var(--ink); }
